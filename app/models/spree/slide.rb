@@ -36,4 +36,16 @@ class Spree::Slide < ActiveRecord::Base
 
     !image.file? && product.present? && product.images.any? ? product.images.first.url(:product) : image
   end
+  def slide_image_small
+
+    !image.file? && product.present? && product.images.any? ? product.images.first.url(:small) : image
+  end
+  def slide_image_mini
+
+    !image.file? && product.present? && product.images.any? ? product.images.first.url(:mini) : image
+  end
+  def slide_image_product
+
+    !image.file? && product.present? && product.images.any? ? product.images.first.url(:product) : image
+  end
 end
